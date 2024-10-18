@@ -11,18 +11,18 @@ const App = () => {
       <BookList books={favouriteBooks} />
     </>
     <h2>Products</h2>
-      <ul>
-        <Product price={22} imgUrl="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?dpr=2&h=480&w=640" alt="Tacos With Lime" width="640" name='Oculus' />
+      <ul className="product-list">
+        <Product imgUrl="https://s7d1.scene7.com/is/image/mcdonalds/574x400_MIXBOX:3-column-desktop?resmode=sharp2" price={22} name='s' />
         
-        <Product name='Ivan' />
+        <Product imgUrl="https://s7d1.scene7.com/is/image/mcdonalds/574x400_NUGGETS:3-column-desktop?resmode=sharp2" price={12} name='Ivan' />
         
-        <Product name='Dada'/>
+        <Product imgUrl="https://s7d1.scene7.com/is/image/mcdonalds/UKR_beef_v2:product-header-desktop?wid=1170&hei=643&dpr=off" price={100} name='Dada'/>
       </ul>
       <>
-      <Alert variant="info">
+      <Alert outlined='true' variant="info">
         Would you like to browse our recommended products?
       </Alert>
-      <Alert variant="error">
+      <Alert elevated='true' variant="error">
         There was an error during your last transaction
       </Alert>
       <Alert variant="success">
@@ -38,3 +38,5 @@ const App = () => {
 };
 
 export default App
+
+
