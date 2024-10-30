@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
+import FeedbackForm from './FeedbackForm/FeedbackForm';
 
 const App = () => {
   const [clicks, setClicks] = useState(() => {
-    const savedClicks = window.localStorage.getItem("saved-clicks");
+    const savedClicks = window.localStorage.getItem('saved-clicks');
     if (savedClicks !== null) {
       return Number(savedClicks);
     }
@@ -10,17 +11,20 @@ const App = () => {
   });
 
   useEffect(() => {
-    window.localStorage.setItem("saved-clicks", clicks);
+    window.localStorage.setItem('saved-clicks', clicks);
   }, [clicks]);
 
   return (
-    <div>
-      <button onClick={() => setClicks(clicks + 1)}>
-        You clicked {clicks} times
-      </button>
-      <button onClick={() => setClicks(0)}>Reset</button>
-    </div>
+    <>
+      <div>
+        <button onClick={() => setClicks(clicks + 1)}>
+          You clicked {clicks} times
+        </button>
+        <button onClick={() => setClicks(0)}>Reset</button>
+      </div>
+      <FeedbackForm />
+    </>
   );
 };
 
-export default App
+export default App;
